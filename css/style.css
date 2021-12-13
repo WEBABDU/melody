@@ -87,9 +87,10 @@ body {
 }
 .home-image path:hover {
   opacity: 1;
+  cursor: pointer;
 }
 
-path.current-floor{
+path.current-floor {
   opacity: 1;
 }
 
@@ -117,7 +118,7 @@ path.current-floor{
   transform: rotateX(180deg);
 }
 
-.counter {
+.flat-counter {
   font-family: "Bebas Neue", sans-serif;
   font-size: 124px;
   color: #635854;
@@ -136,4 +137,120 @@ path.current-floor{
   cursor: pointer;
 }
 
-/*  */
+/* modal */
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 2s;
+}
+
+.is-open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-dialog {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 565px;
+  background-color: #fff;
+  transform: translateY(-10%);
+  transition: transform 2s, opacity 0.2s;
+  transition-delay: 0.2s;
+  opacity: 0;
+}
+
+.is-open > .modal-dialog {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.modal-image {
+  width: 60%;
+  height: 100%;
+  padding: 50px;
+  text-align: center;
+  background-color: #ebebeb;
+}
+
+.flats path {
+  opacity: 0;
+}
+
+.flats path:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.flats path.current-link{
+  opacity: 1;
+}
+
+.modal-title {
+  font-family: Bebas Neue;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 25px;
+}
+
+.modal-info {
+  width: 40%;
+  padding: 50px 46px;
+}
+
+.flats-list {
+  list-style: none;
+  margin: 55px 0;
+}
+
+.flat-item {
+  padding-bottom: 10px;
+}
+
+.flat-link {
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 19px;
+  color: #635854;
+}
+
+.flat-link:hover {
+  text-decoration: underline;
+  color: #3596f5;
+}
+
+.flat-link.current-flat {
+  text-decoration: underline;
+  color: #3596f5;
+}
+
+.flats-alert {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #635854;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 38px;
+  right: 27px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
